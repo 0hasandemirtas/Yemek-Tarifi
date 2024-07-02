@@ -1,4 +1,5 @@
 import { createUseStyles } from "react-jss";
+import { clickEvent } from "../../themes/helpers";
 
 const useStyles=createUseStyles({
     container: {
@@ -19,8 +20,10 @@ const useStyles=createUseStyles({
         alignItems:"center",
         display:"flex",
         width:"100%",
-        
         "@media screen and (max-width: 900px)": {
+            display:"none"
+        },
+        "& div:nth-child(3)": {
             display:"none"
         }
     },
@@ -38,6 +41,7 @@ const useStyles=createUseStyles({
             borderRadius:"5px",
             cursor:"pointer",
         },
+        
     },
     memberContainer:{
         justifyContent:"flex-end",
@@ -83,8 +87,43 @@ const useStyles=createUseStyles({
         borderRadius:"50%",
         width:"75px",
         height:"75px",
+        "@media screen and (max-width: 900px)": {
+            marginLeft:"25px"
+        }
 
+    },
+    icon:{
+        width:"40px",
+        margin:"10px",
+        height:"auto",
+        display:"flex",
+        justifyContent:"center",
+        alignItems:"center",
+        ...clickEvent(),
+        "@media screen and (max-width: 900px)": {
+            display:"none"
+        },
+        "@media screen and (max-width: 1100px)": {
+            width:"25px",
+            height:"25px"
+
+        },
+        
+        "& svg":{
+            width:"25px",
+            height:"25px",
+        }
+
+    },
+    iconGroup:{
+        display:"flex",
+        "@media screen and (max-width: 1100px)": {
+            flexDirection:"column",
+            margin:"0",
+            marginRight:"50px",
+        }
     }
+    
 })
 
 export default useStyles;

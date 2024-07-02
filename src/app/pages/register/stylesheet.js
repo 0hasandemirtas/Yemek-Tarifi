@@ -1,6 +1,6 @@
-import{
-    createUseStyles
-} from "react-jss"
+import { 
+    createUseStyles 
+} from "react-jss";
 
 const useStyles=createUseStyles({
     formContainer:{
@@ -11,8 +11,8 @@ const useStyles=createUseStyles({
         alignItems:"center",
         borderRadius:"20px",
         display:"flex",
-        height:"600px",
-        marginTop:"20px",
+        height:"800px",
+        margin:"20px 0",
         width:"800px",
         "@media screen and (max-width: 1100px)": {
             width:"100%"
@@ -31,6 +31,7 @@ const useStyles=createUseStyles({
         "@media screen and (max-width: 600px)": {
             width:"90%",
         }
+        
     },
     container:{
         background:'url("./images/yemek-arkaplan-3.jpg")',
@@ -38,8 +39,8 @@ const useStyles=createUseStyles({
         flexDirection:"column",
         alignItems:"center",
         display:"flex",
+        height:"100vh",
         width:"100%",
-        height:"100vh"
     },
     formContentContainer:{
         lineHeight: "30px",
@@ -52,6 +53,20 @@ const useStyles=createUseStyles({
             width:"90%",
         }
     },
+    formGroupRadio:{
+        justifyContent:"center",
+        flexDirection:"column",
+        fontWeight:"600",
+        fontSize:"20px",
+        color:"#2E8B57",
+        display:"flex",
+        "& div > div":{
+            "@media screen and (max-width: 600px)": {
+                display:"flex",
+                flexDirection:"row",
+            }
+        },
+    },
     formButton:{
         backgroundColor:"#2E8B57",
         borderRadius:"10px",
@@ -60,10 +75,25 @@ const useStyles=createUseStyles({
         fontSize:"15px",
         color:"white"
     },
+    title:{
+        border:"3px solid black",
+        padding:"10px 20px",
+        borderRadius:"10px",
+        fontSize:"40px",
+        color:"black"
+    },
     formGroup:{
         fontSize:"18px",
         display:"flex",
         color:"#556B2F"
-    }
+    },
+    formInput:{
+        margin:"0 15px",
+        color:"#2E8B57",
+    },
+    formGroupRadioLabel:{
+        color:"#556B2F"
+    },
 })
+
 export default useStyles;

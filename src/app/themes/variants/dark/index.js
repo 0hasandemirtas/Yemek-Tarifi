@@ -1,5 +1,6 @@
-const color={
-    primary:"#007a33"
+const colors={
+    primary:"#007a33",
+    backgroundColor:"black"
 };
 
 const dark={

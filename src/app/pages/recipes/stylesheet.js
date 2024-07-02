@@ -1,5 +1,5 @@
 import { createUseStyles } from "react-jss";
-
+import { clickEvent } from "../../themes/helpers";
 const useStyles=createUseStyles({
     container: {
         width:"100%",
@@ -11,8 +11,8 @@ const useStyles=createUseStyles({
     },
     recipesGroup:{
         width:"80%",
-        height:"100vh",
-        marginTop:"100px",
+        height:"auto",
+        margin:"50px 0",
         borderRight:"2px solid green",
         borderLeft:"2px solid green",
         display:"flex",
@@ -24,25 +24,16 @@ const useStyles=createUseStyles({
     recipesContentContainer:{
         width:"20%",
         height:"40%",
-        borderRadius:"15px",
         margin:"15px",
-        //border:"2px solid green",
+        borderBottom:"2px solid black",
         color:"#007a33",
-        opacity:"0.8",
+        ...clickEvent(),
         "& img":{
             width:"90%",
             borderRadius:"15px"
         },
-        "&:hover": {
-            cursor: "pointer",
-            opacity:"1",
-            transitionDelay:"1s",
-            transition:"width 1s"
-        },
-        "& > h3":{
-            "&hover":{
-                borderBottom:"1px solid green"
-            }
+        "@media screen and (max-width: 1100px)": {
+            width:"200px"
         }
     },
     titleGroup:{
