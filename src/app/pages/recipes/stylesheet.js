@@ -2,35 +2,37 @@ import { createUseStyles } from "react-jss";
 import { clickEvent } from "../../themes/helpers";
 const useStyles=createUseStyles({
     container: {
+        height:"auto",
         width:"100%",
         display:"flex",
         alignItems:"center",
         justifyContent:"center",
         background:'url("./images/yemek-arkaplan-3.jpg")',
-        backgroundRepeat:"repeat"
+        backgroundRepeat:"repeat",
+        userSelect:"none",
     },
     recipesGroup:{
-        width:"80%",
-        height:"auto",
-        margin:"50px 0",
+        backgroundColor:({colors})=>colors.backgroundColor,
         borderRight:"2px solid green",
-        borderLeft:"2px solid green",
-        display:"flex",
-        flexWrap:"wrap",
         justifyContent:"space-evenly",
-        backgroundColor:"#d6ffe1",
-        borderRadius:"20px"
+        borderLeft:"2px solid green",
+        borderRadius:"20px",
+        margin:"50px 0",
+        flexWrap:"wrap",
+        height:"auto",
+        display:"flex",
+        width:"80%",
     },
     recipesContentContainer:{
-        width:"20%",
-        height:"40%",
-        margin:"15px",
+        color:({colors})=>colors.titleColor,
         borderBottom:"2px solid black",
-        color:"#007a33",
         ...clickEvent(),
+        margin:"15px",
+        height:"40%",
+        width:"20%",
         "& img":{
+            borderRadius:"15px",
             width:"90%",
-            borderRadius:"15px"
         },
         "@media screen and (max-width: 1100px)": {
             width:"200px"
@@ -41,24 +43,17 @@ const useStyles=createUseStyles({
         justifyContent:"space-evenly",
         "& > span":{
             fontSize:"15px",
-            "&:before": {
-                animation: "broadcastAnim 1.5s ease-in-out infinite",
-            position: "absolute",
-            borderRadius: "50%",
-            background: "black",
-            content: "''"
-            }
         }
     },
     recipesContent:{
-        display:"flex",
-        alignItems:"center",
         justifyContent:"center",
         flexDirection:"column",
+        alignItems:"center",
+        display:"flex",
         "& img":{
-            width:"20px",
             height:"20px",
-            color:"green"
+            color:"green",
+            width:"20px",
         }
     }
 })

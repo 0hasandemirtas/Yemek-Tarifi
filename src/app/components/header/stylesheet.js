@@ -2,11 +2,32 @@ import { createUseStyles } from "react-jss";
 import { clickEvent } from "../../themes/helpers";
 
 const useStyles=createUseStyles({
+    icon:{
+        justifyContent:"center",
+        alignItems:"center",
+        ...clickEvent(),
+        display:"flex",
+        margin:"10px",
+        height:"auto",
+        width:"40px",
+        "@media screen and (max-width: 900px)": {
+            display:"none"
+        },
+        "@media screen and (max-width: 1100px)": {
+            height:"25px",
+            width:"25px",
+        },
+        "& svg":{
+            height:"25px",
+            width:"25px",
+        }
+    },
     container: {
+        backgroundColor:({colors})=> colors.backgroundColor,
         borderBottom:"2px solid green",
-        backgroundColor:"#d6ffe1",
         flexDirection:"row",
         alignItems:"center",
+        userSelect:"none",
         display:"flex",
         height:"100px",
         width:"100%",
@@ -28,12 +49,12 @@ const useStyles=createUseStyles({
         }
     },
     titleContent:{
+        color:({colors})=>colors.titleColor,
         borderBottom: "2px solid green",
         textDecoration:"none",
         padding:"2px 10px",
         fontSize: "1.5rem",
         fontWeight:"bold",
-        color:"#007a33",
         margin:"0 50px",
         "&:hover":{
             borderRight: "2px solid green",
@@ -61,7 +82,7 @@ const useStyles=createUseStyles({
         textDecoration:"none",
         fontSize: "1.125rem",
         padding:"2px 10px",
-        color:"#007a33",
+        color:({colors})=>colors.titleColor,
         margin:"10px",
     },
     slash:{
@@ -74,56 +95,31 @@ const useStyles=createUseStyles({
         }
     },
     hamburger:{
-        display:"none",
+        justifyContent:"flex-end",
         alignItems:"center",
-        justifyContent:"flex-end"
-,        "@media screen and (max-width: 900px)": {
+        display:"none",
+        "@media screen and (max-width: 900px)": {
+            marginRight:"25px",
             display:"flex",
-            marginRight:"25px"
         }
     },
     logo:{
         marginLeft:"100px",
         borderRadius:"50%",
-        width:"75px",
         height:"75px",
+        width:"75px",
         "@media screen and (max-width: 900px)": {
             marginLeft:"25px"
         }
-
-    },
-    icon:{
-        width:"40px",
-        margin:"10px",
-        height:"auto",
-        display:"flex",
-        justifyContent:"center",
-        alignItems:"center",
-        ...clickEvent(),
-        "@media screen and (max-width: 900px)": {
-            display:"none"
-        },
-        "@media screen and (max-width: 1100px)": {
-            width:"25px",
-            height:"25px"
-
-        },
-        
-        "& svg":{
-            width:"25px",
-            height:"25px",
-        }
-
     },
     iconGroup:{
         display:"flex",
         "@media screen and (max-width: 1100px)": {
             flexDirection:"column",
-            margin:"0",
             marginRight:"50px",
+            margin:"0",
         }
     }
-    
 })
 
 export default useStyles;

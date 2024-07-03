@@ -1,16 +1,18 @@
 import { useState, createContext, useContext } from "react";
+import themes from "../themes";
 
 const ThemeContext=createContext();
-
 export const ThemeProvider=({children})=>{
-    const [theme, setTheme]=useState("light");
-
+    
+    const [activeTheme, setActiveTheme]=useState(themes[0]);
+    const changeTheme=()=>{
+        setActiveTheme(activeTheme===themes[0] ? themes[1] : themes[0])
+    }
     const values={
-        theme,
-        setTheme,
+        activeTheme,
+        changeTheme,
     };
-
-    return (<ThemeContext.Provider value={values }>
+    return (<ThemeContext.Provider value={values}>
         {children}
     </ThemeContext.Provider>);
 }

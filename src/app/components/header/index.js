@@ -6,36 +6,40 @@ import { useState } from 'react';
 import { GrLanguage } from "react-icons/gr";
 import { VscColorMode } from "react-icons/vsc";
 import { useTheme } from '../../context/themeContext';
+import { useLanguage } from '../../context/languageContext';
 
 const Header=()=> {
-  const {theme, setTheme}=useTheme();
+  const {activeTheme, changeTheme}=useTheme();
+  const {activeLanguage , changeLanguage}=useLanguage();
   const [isOpen, setOpen]=useState(false);
-  const classes=useStyles();
+  const classes=useStyles({colors: activeTheme.color});
+  const lang=activeLanguage.translations;
+  console.log(activeLanguage);
   return (
     <div className={classes.container}>
-        <img className={classes.logo}  src="./images/yemekLogo.jpg"/>
+        <img className={classes.logo}  src="./images/yemekLogo.jpg" alt='yemekLogo'/>
         <div className={classes.titleContentContainer}>
           <div>
-            <Link className={classes.titleContent} to="/">Home</Link>
+            <Link className={classes.titleContent} to="/">{lang.home}</Link>
           </div>
           <div>
-            <Link className={classes.titleContent} to="recipes">Recipes</Link>
+            <Link className={classes.titleContent} to="recipes">{lang.recipes}</Link>
           </div>
           <div>
-            <Link className={classes.titleContent} to="myrecipes">My Recipes</Link>
+            <Link className={classes.titleContent} to="myrecipes">{lang.myrecipes}</Link>
           </div>
         </div>
         <div className={classes.memberContainer}>
-            <Link  className={classes.memberContent} to="login">Sign In</Link>
+            <Link  className={classes.memberContent} to="login">{lang.signIn}</Link>
             <span className={classes.slash}>/</span>
-            <Link className={classes.memberContent}  to="register">Sign Up</Link>
+            <Link className={classes.memberContent}  to="register">{lang.signUp}</Link>
         </div>
         <div className={classes.iconGroup}>
           <div className={classes.icon}>
-            <GrLanguage />
+            <GrLanguage onClick={()=>changeLanguage()}/>
           </div>
           <div className={classes.icon}>
-            <VscColorMode onClick={()=> setTheme(theme ==="light" ? "dark" : "light")} />
+            <VscColorMode onClick={()=> changeTheme()} />
           </div> 
         </div>
         <div className={classes.hamburger}>

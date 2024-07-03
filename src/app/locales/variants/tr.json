@@ -1,0 +1,20 @@
+{
+    "code":"tr",
+    "isRTL":"false",
+    "translations":{
+        "home": "Anasayfa",
+        "recipes":"Tarifler",
+        "myRecipes":"Tariflerin",
+        "signIn":"GİRİŞ YAP",
+        "signUp":"KAYIT Ol",
+        "yourName":"Adınız",
+        "lastName":"Soyadınız",
+        "password":"Şifreniz",
+        "confirmPassword":"Şifenizi doğrulayın",
+        "gender":"Cinsiyet",
+        "male":"Erkek",
+        "female":"Kadın",
+        "minute":"Dakika",
+        "people":"kişi"
+    }
+}

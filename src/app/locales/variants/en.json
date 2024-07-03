@@ -1,0 +1,20 @@
+{
+    "code":"en",
+    "isRTL":"false",
+    "translations":{
+        "home": "Home",
+        "recipes":"Recipes",
+        "myRecipes":"My Recipes",
+        "signIn":"SIGN IN",
+        "signUp":"SIGN UP",
+        "yourName":"Your Name",
+        "lastName":"Last Name",
+        "password":"Password",
+        "confirmPassword":"Confirm Password",
+        "gender":"Gender",
+        "male":"Male",
+        "female":"Female",
+        "minute":"Minute",
+        "people":"People"
+    }
+}
