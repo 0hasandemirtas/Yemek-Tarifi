@@ -2,7 +2,7 @@ import { createUseStyles } from "react-jss";
 import { clickEvent } from "../../themes/helpers";
 const useStyles=createUseStyles({
     container: {
-        height:"auto",
+        minHeight:"100vh",
         width:"100%",
         display:"flex",
         alignItems:"center",
@@ -55,6 +55,10 @@ const useStyles=createUseStyles({
             color:"green",
             width:"20px",
         }
+    },
+    button:{
+        width:"50px",
+        height:"50px"
     }
 })
 export default useStyles;

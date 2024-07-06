@@ -4,7 +4,6 @@ const Footer=()=> {
     const classes=useStyles();
   return (
     <div className={classes.container} >
-        
     </div>
   )
 }

@@ -2,6 +2,45 @@ import { createUseStyles } from "react-jss";
 import { clickEvent } from "../../themes/helpers";
 
 const useStyles=createUseStyles({
+    contentContainerVisible:{
+        justifyContent:"space-between",
+        alignItems:"center",
+        display:"flex",
+        "@media screen and (max-width: 900px)": {
+            justifyContent:"space-evenly",
+            backgroundColor:"lightgray",
+            flexDirection:"column",
+            transition:"all .5s",
+            alignItems:"center",
+            position:"absolute",
+            display:"flex",
+            opacity:"0.9",
+            height:"80vh",
+            width:"350px",
+            top:"100px",
+            right:"0px",
+            zIndex:"2",
+        },
+    },
+    contentContainerHidden:{
+        justifyContent:"space-between",
+        alignItems:"center",
+        display:"flex",
+        "@media screen and (max-width: 900px)": {
+            backgroundColor:"lightgray",
+            justifyContent:"center",
+            flexDirection:"column",
+            transition:"all .5s",
+            alignItems:"center",
+            position:"fixed",
+            display:"flex",
+            right:"-350px",
+            width:"350px",
+            height:"80vh",
+            top:"100px",
+            zIndex:"2",
+        },
+    },
     icon:{
         justifyContent:"center",
         alignItems:"center",
@@ -11,7 +50,7 @@ const useStyles=createUseStyles({
         height:"auto",
         width:"40px",
         "@media screen and (max-width: 900px)": {
-            display:"none"
+            
         },
         "@media screen and (max-width: 1100px)": {
             height:"25px",
@@ -25,6 +64,7 @@ const useStyles=createUseStyles({
     container: {
         backgroundColor:({colors})=> colors.backgroundColor,
         borderBottom:"2px solid green",
+        justifyContent:"space-between",
         flexDirection:"row",
         alignItems:"center",
         userSelect:"none",
@@ -42,7 +82,32 @@ const useStyles=createUseStyles({
         display:"flex",
         width:"100%",
         "@media screen and (max-width: 900px)": {
+            flexDirection:"column",
+            gap:"20px",
+        },
+        "& div:nth-child(3)": {
             display:"none"
+        }
+    },
+    titleContentContainerHidden:{
+        justifyContent:"flex-end",
+        textDecoration:"none",
+        alignItems:"center",
+        display:"flex",
+        width:"100%",
+        "@media screen and (max-width: 900px)": {
+            justifyContent:"center",
+            flexDirection:"column",
+            transition:"all .5s",
+            alignItems:"center",
+            background:"gray",
+            position:"fixed",
+            display:"flex",
+            right:"-350px",
+            width:"350px",
+            height:"80vh",
+            top:"100px",
+            zIndex:"2",
         },
         "& div:nth-child(3)": {
             display:"none"
@@ -62,7 +127,11 @@ const useStyles=createUseStyles({
             borderRadius:"5px",
             cursor:"pointer",
         },
-        
+        "@media screen and (max-width: 900px)": {
+            border:"1px solid black",
+            padding:"5px 125px",
+            width:"175px"
+        }
     },
     memberContainer:{
         justifyContent:"flex-end",
@@ -74,7 +143,7 @@ const useStyles=createUseStyles({
             flexDirection:"column"
         },
         "@media screen and (max-width: 900px)": {
-            display:"none"
+            flexDirection:"row"
         }
     },
     memberContent:{
@@ -90,9 +159,7 @@ const useStyles=createUseStyles({
         fontWeight:"bold",
         color:"#007a33",
         margin:"10px",
-        "@media screen and (max-width: 1100px)": {
-            display:"none"
-        }
+        
     },
     hamburger:{
         justifyContent:"flex-end",
@@ -118,8 +185,16 @@ const useStyles=createUseStyles({
             flexDirection:"column",
             marginRight:"50px",
             margin:"0",
+        },
+        "@media screen and (max-width: 900px)": {
+            flexDirection:"row"
         }
-    }
-})
+    },
+    logoContainer:{
+        "@media screen and (max-widht: 900px)":{
+            width:"50%"
+        }
+    },
+});
 
 export default useStyles;
