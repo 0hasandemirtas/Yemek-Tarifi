@@ -33,7 +33,6 @@ const useStyles=createUseStyles({
             transition:"all .5s",
             alignItems:"center",
             position:"fixed",
-            display:"flex",
             right:"-350px",
             width:"350px",
             height:"80vh",
@@ -49,9 +48,6 @@ const useStyles=createUseStyles({
         margin:"10px",
         height:"auto",
         width:"40px",
-        "@media screen and (max-width: 900px)": {
-            
-        },
         "@media screen and (max-width: 1100px)": {
             height:"25px",
             width:"25px",
@@ -89,30 +85,6 @@ const useStyles=createUseStyles({
             display:"none"
         }
     },
-    titleContentContainerHidden:{
-        justifyContent:"flex-end",
-        textDecoration:"none",
-        alignItems:"center",
-        display:"flex",
-        width:"100%",
-        "@media screen and (max-width: 900px)": {
-            justifyContent:"center",
-            flexDirection:"column",
-            transition:"all .5s",
-            alignItems:"center",
-            background:"gray",
-            position:"fixed",
-            display:"flex",
-            right:"-350px",
-            width:"350px",
-            height:"80vh",
-            top:"100px",
-            zIndex:"2",
-        },
-        "& div:nth-child(3)": {
-            display:"none"
-        }
-    },
     titleContent:{
         color:({colors})=>colors.titleColor,
         borderBottom: "2px solid green",
@@ -144,6 +116,15 @@ const useStyles=createUseStyles({
         },
         "@media screen and (max-width: 900px)": {
             flexDirection:"row"
+        },
+        "& span":{
+            fontSize:"1.5 rem",
+            fontWeight:"bold",
+            color:"#007a33",
+            margin:"10px",
+            "@media screen and (max-width: 1100px)":{
+                display:"none"
+            }
         }
     },
     memberContent:{
@@ -153,13 +134,6 @@ const useStyles=createUseStyles({
         padding:"2px 10px",
         color:({colors})=>colors.titleColor,
         margin:"10px",
-    },
-    slash:{
-        fontSize:"1.5 rem",
-        fontWeight:"bold",
-        color:"#007a33",
-        margin:"10px",
-        
     },
     hamburger:{
         justifyContent:"flex-end",

@@ -1,17 +1,8 @@
 import { createUseStyles } from "react-jss";
 import { clickEvent } from "../../themes/helpers";
+
 const useStyles=createUseStyles({
     container: {
-        background:'url("./images/yemek-arkaplan-3.jpg")',
-        backgroundRepeat:"repeat",
-        alignItems:"center",
-        flexDirection:"column",
-        minHeight:"100vh",
-        userSelect:"none",
-        display:"flex",
-        width:"100%",
-    },
-    recipesGroup:{
         backgroundColor:({colors})=>colors.backgroundColor,
         borderRight:"2px solid green",
         justifyContent:"space-evenly",
@@ -56,26 +47,5 @@ const useStyles=createUseStyles({
             width:"20px",
         }
     },
-    button:{
-        width:"50px",
-        height:"50px"
-    },
-    operationsContainer:{
-        backgroundColor:({colors})=>colors.backgroundColor,
-        justifyContent:"space-evenly",
-        alignItems:"center",
-        borderRadius:"15px",
-        display:"flex",
-        margin:"15px 0",
-        height:"100px",
-        width:"80%",
-        "& button":{
-            backgroundColor:({colors})=>colors.buttonColor,
-            color:({colors})=>colors.buttonTextColor,
-            padding:"10px 30px",
-            borderRadius:"25px",
-            ...clickEvent(),
-        }
-    }
 })
 export default useStyles;

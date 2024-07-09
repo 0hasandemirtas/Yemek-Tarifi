@@ -34,7 +34,7 @@ const Header=()=> {
           </div>
           <div className={classes.memberContainer}>
               <Link  className={classes.memberContent} to="login">{lang.signIn}</Link>
-              <span className={classes.slash}>/</span>
+              <span>/</span>
               <Link className={classes.memberContent}  to="register">{lang.signUp}</Link>
           </div>
           <div className={classes.iconGroup}>
