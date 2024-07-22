@@ -1,12 +1,16 @@
 import{
     createUseStyles
 } from "react-jss";
-import { clickEvent } from "../../themes/helpers";
+import {
+    clickEvent 
+} from "../../themes/helpers";
 const useStyles=createUseStyles({
     formContainer:{
         justifyContent:"space-evenly",
         border:"2px solid #2E8B57",
-        backgroundColor:({colors}) => colors.backgroundColor,
+        backgroundColor:({
+            colors
+        }) => colors.backgroundColor,
         flexDirection:"column",
         alignItems:"center",
         borderRadius:"20px",
@@ -55,18 +59,24 @@ const useStyles=createUseStyles({
         }
     },
     formButton:{
-        backgroundColor:({colors})=>colors.buttonColor,
+        backgroundColor:({
+            colors
+        })=>colors.buttonColor,
         borderRadius:"10px",
         padding:"10px 25px",
         fontWeight:"bold",
         fontSize:"15px",
-        color:({colors})=>colors.buttonTextColor,
+        color:({
+            colors
+        })=>colors.buttonTextColor,
         ...clickEvent(),
     },
     formGroup:{
         fontSize:"18px",
         display:"flex",
-        color:({colors})=>colors.textColor,
+        color:({
+            colors
+        })=>colors.textColor,
     }
-})
+});
 export default useStyles;

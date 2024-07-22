@@ -15,6 +15,12 @@
         "male":"Erkek",
         "female":"Kadın",
         "minute":"Dakika",
-        "people":"kişi"
+        "people":"kişi",
+        "add":"Ekle",
+        "update":"Güncelle",
+        "delete":"Sil",
+        "recipeTitle":"Tarif Başlığı",
+        "recipe":"Tarif",
+        "portion":"Porsiyon"
     }
 }

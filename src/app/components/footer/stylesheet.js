@@ -1,4 +1,6 @@
-import { createUseStyles } from "react-jss";
+import {
+    createUseStyles 
+} from "react-jss";
 
 const useStyles=createUseStyles({
     container:{
@@ -9,6 +11,6 @@ const useStyles=createUseStyles({
         width:"100%",
         bottom:"0",
     }
-})
+});
 
 export default useStyles;

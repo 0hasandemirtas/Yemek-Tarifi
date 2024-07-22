@@ -10,13 +10,10 @@ import {
 } from "../../context/languageContext";
 import RecipesSections from "./views/recipesSection";
 import {
-    Link 
+    Link, Outlet 
 } from "react-router-dom";
-import RecipeContent from "./views/recipesContent";
-import {
-    useState 
-} from "react";
-const Recipes = () => {
+
+const MyRecipes = () => {
     const {
         activeLanguage 
     } = useLanguage();
@@ -24,18 +21,16 @@ const Recipes = () => {
         activeTheme 
     } = useTheme();
     const lang = activeLanguage.translations;
-    const [open, setOpen] = useState(false);
-    const Controller = () => {
-        setOpen(!open);
-    };
 
     const classes = useStyles({
         colors: activeTheme.color 
     });
     return (
         <div className={classes.container}>
-            <div className={classes.boxContainer} onClick={Controller}>
-                <div className={classes.box}></div>
+            <div className={classes.operationsContainer}>
+                <Link to="/addRecipe">
+                    <button>{lang.add}</button>
+                </Link>
             </div>
             <div className={classes.recipesGroup}>
                 <RecipesSections />
@@ -44,4 +39,4 @@ const Recipes = () => {
     );
 };
 
-export default Recipes;
+export default MyRecipes;

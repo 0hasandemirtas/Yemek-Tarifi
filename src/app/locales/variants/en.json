@@ -4,7 +4,7 @@
     "translations":{
         "home": "Home",
         "recipes":"Recipes",
-        "myRecipes":"My Recipes",
+        "myRecipes":"MyRecipes",
         "signIn":"SIGN IN",
         "signUp":"SIGN UP",
         "yourName":"Your Name",
@@ -15,6 +15,12 @@
         "male":"Male",
         "female":"Female",
         "minute":"Minute",
-        "people":"People"
+        "people":"People",
+        "add":"Add",
+        "update":"Update",
+        "delete":"Delete",
+        "recipeTitle":"Recipe Title",
+        "recipe":"recipe",
+        "portion":"Portion"
     }
 }

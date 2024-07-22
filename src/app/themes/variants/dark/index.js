@@ -10,6 +10,6 @@ const color={
 const dark={
     key:"dark",
     color
-}
+};
 
 export default dark;

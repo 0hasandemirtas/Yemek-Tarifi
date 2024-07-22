@@ -10,8 +10,8 @@ const useStyles = createUseStyles({
         backgroundRepeat: "repeat",
         flexDirection: "column",
         alignItems: "center",
-        minHeight: "100vh",
         userSelect: "none",
+        minHeight: "100vh",
         display: "flex",
         width: "100%",
     },
@@ -25,8 +25,8 @@ const useStyles = createUseStyles({
         borderRadius: "20px",
         margin: "15px 0",
         flexWrap: "wrap",
-        display: "flex",
         height: "auto",
+        display: "flex",
         width: "80%",
     },
     recipesContentContainer: {
@@ -90,27 +90,6 @@ const useStyles = createUseStyles({
             borderRadius: "25px",
             ...clickEvent(),
         },
-    },
-    boxContainer: {
-        display: ({
-            open 
-        }) => (open ? "flex" : "none"),
-        justifyContent: "center",
-        backgroundColor: "black",
-        position: "fixed",
-        opacity: "0.75",
-        height: "100%",
-        width: "100%",
-    },
-    box: {
-        backgroundColor: ({
-            colors 
-        }) => colors.backgroundColor,
-        borderRadius: "15px",
-        marginTop: "50px",
-        height: "75%",
-        width: "30%",
-        zIndex: "22",
     },
 });
 export default useStyles;

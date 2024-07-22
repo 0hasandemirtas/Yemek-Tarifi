@@ -8,6 +8,6 @@ export const clickEvent= () =>{
             transform: "translateY(2px)",
             transition: "transform 0.1s",
         }
-    }
+    };
 
-}
+};

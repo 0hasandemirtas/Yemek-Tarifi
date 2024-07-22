@@ -10,6 +10,6 @@ const color={
 const light={
     key:"light",
     color
-}
+};
 
 export default light;

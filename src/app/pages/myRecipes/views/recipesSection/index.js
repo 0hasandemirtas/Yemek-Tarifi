@@ -4,6 +4,9 @@ import React, {
 import useStyles from "./stylesheet";
 import axios from "axios";
 import RecipesGroup from "../../../../components/recipesGroup";
+import {
+    MdDelete 
+} from "react-icons/md";
 
 const RecipesSections = () => {
     const [recipes, setRecipes] = useState([]);
@@ -28,6 +31,7 @@ const RecipesSections = () => {
             })
             .finally(() => setIsLoading(false));
     }, []);
+
     return (
         <>
             {isLoading ? (
@@ -35,13 +39,15 @@ const RecipesSections = () => {
             ) : (
                 recipes.map((item, index) => {
                     return (
-                        <RecipesGroup
-                            key={`recipes-${index}`}
-                            photoURL="./images/yemek1.jpg"
-                            title={item.title}
-                            minute={item.minute}
-                            people={item.people}
-                        />
+                        <>
+                            <RecipesGroup
+                                photoURL="./images/yemek1.jpg"
+                                title={item.title}
+                                minute={item.minute}
+                                people={item.people}
+                                id={item.id}
+                            />
+                        </>
                     );
                 })
             )}

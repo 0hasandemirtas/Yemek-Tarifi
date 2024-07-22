@@ -1,11 +1,11 @@
-import React from 'react'
-import useStyles from './stylesheet'
+import React from 'react';
+import useStyles from './stylesheet';
 const Footer=()=> {
     const classes=useStyles();
-  return (
-    <div className={classes.container} >
-    </div>
-  )
-}
+    return (
+        <div className={classes.container} >
+        </div>
+    );
+};
 
-export default Footer
+export default Footer;
