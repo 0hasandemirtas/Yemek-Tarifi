@@ -15,7 +15,7 @@ const RecipesSections = () => {
     const apiURL = "http://localhost:3001";
     useEffect(() => {
         axios
-            .get("http://localhost:3001")
+            .get("http://localhost:3001/api/questions")
             .then((res) => {
                 const recipes = res.data;
                 if (recipes.code === 200) {

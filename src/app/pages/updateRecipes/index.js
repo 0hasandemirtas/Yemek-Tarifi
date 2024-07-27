@@ -36,7 +36,7 @@ const UpdateRecipes = () => {
     });
     useEffect(() => {
         axios
-            .get(`http://localhost:3001/${id}`)
+            .get(`http://localhost:3001/api/questions/${id}`)
             .then((res) => {
                 const recipes = res.data;
                 if (recipes.code === 200) {
@@ -73,7 +73,7 @@ const UpdateRecipes = () => {
             post.people = recipes.people;
         }
         axios
-            .put(`http://localhost:3001/${id}`, post)
+            .put(`http://localhost:3001/api/questions/${id}`, post)
             .then((response) => console.log(response))
             .catch((err) => {
                 alert(err.message);

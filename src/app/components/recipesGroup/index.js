@@ -36,7 +36,7 @@ const RecipesGroup = ({
     const navigate = useNavigate();
     const recipeDelete = () => {
         axios
-            .delete(`http://localhost:3001/${id}`)
+            .delete(`http://localhost:3001/api/questions/${id}`)
             .catch((err) => {
                 alert(err.message);
                 console.error(err);

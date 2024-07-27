@@ -42,22 +42,7 @@ const Register=()=> {
                         <label className={classes.formGroup}>{lang.confirmPassword}</label>
                         <input className={classes.formGroupInput}type='password' placeholder={lang.confirmPassword}/>
                     </div>
-                    <div className={classes.formContentContainer}>
-            
-                        <div className={classes.formGroupRadio}>
-                            <label className={classes.formGroupRadioLabel} >{lang.gender}</label>
-                            <div>
-                                <div>
-                                    <input className={classes.formInput} name='gender' type='radio' />
-                                    <span>{lang.male}</span>
-                                </div>
-                                <div>
-                                    <input className={classes.formInput} name='gender' type='radio' />
-                                    <span>{lang.female}</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <button className={classes.formButton} >{lang.signUp}</button>
                 </div>
             </div>

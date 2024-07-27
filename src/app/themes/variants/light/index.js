@@ -1,9 +1,9 @@
 const color={
     primary:"#007a33",
-    backgroundColor:"#79D291",
-    textColor:"#606971",
-    buttonColor:"#194D33",
-    titleColor:"#194D33",
+    backgroundColor:"#e9e9e9",
+    textColor:"#00933B",
+    buttonColor:"#00933B",
+    titleColor:"#00933B",
     buttonTextColor:"white",
 };
 

@@ -41,7 +41,7 @@ const AddRecipe = () => {
     const handleSubmit = (event) => {
         console.log(post);
         axios
-            .post("http://localhost:3001", post)
+            .post("http://localhost:3001/api/questions", post)
             .then((response) => console.log(response))
             .catch((err) => {
                 alert(err.message);
