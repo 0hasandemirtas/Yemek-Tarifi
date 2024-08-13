@@ -6,29 +6,12 @@ import {
 } from "../../themes/helpers";
 
 const useStyles = createUseStyles({
-    container: {
-        backgroundColor: ({
-            colors 
-        }) => colors.backgroundColor,
-        borderRight: "2px solid green",
-        justifyContent: "space-evenly",
-        borderLeft: "2px solid green",
-        borderRadius: "20px",
-        margin: "15px 0",
-        flexWrap: "wrap",
-        height: "auto",
-        display: "flex",
-        width: "80%",
-    },
-    recipesGroup: {
-        display: "flex",
-        justifyContent: "space-evenly",
-    },
     recipesContentContainer: {
         color: ({
             colors 
         }) => colors.titleColor,
-        borderBottom: "2px solid black",
+        border:"solid 1px black",
+        borderRadius:"5px",
         ...clickEvent(),
         margin: "15px",
         height: "40%",
@@ -58,9 +41,6 @@ const useStyles = createUseStyles({
             color: "green",
             width: "20px",
         },
-    },
-    link: {
-        textDecoration: "none",
     },
     button: {
         backgroundColor: ({

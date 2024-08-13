@@ -1,10 +1,11 @@
 const color={
-    primary:"#007a33",
-    backgroundColor:"#194D33",
-    textColor:"White",
-    buttonColor:"#79D291",
-    titleColor:"#79D291",
-    buttonTextColor:"#606971",
+    primary:"#4A6A59",
+    backgroundColor:"#A3BFB5",
+    textColor:"#2C3E50",
+    buttonColor:"#FFEB3B",
+    titleColor:"#2C3E50 ",
+    buttonTextColor:"#000000",
+    mainTitleColor:"#E1F5DC",
 };
 
 const dark={

@@ -4,7 +4,9 @@ import {
 
 const useStyles = createUseStyles({
     container: {
-        background: 'url("../images/yemek-arkaplan-3.jpg")',
+        backgroundColor:({
+            colors
+        })=> colors.primary ,
         justifyContent: "center",
         alignItems: "center",
         minHeight: "100vh",
@@ -25,6 +27,9 @@ const useStyles = createUseStyles({
                 colors 
             }) => colors.textColor,
         },
+        "@media screen and (max-width: 900px":{
+            flexDirection:"column",
+        }
     },
     contentContainer: {
         borderRadius: "10px",
@@ -35,7 +40,11 @@ const useStyles = createUseStyles({
         }) => colors.backgroundColor,
         "& h1": {
             marginTop: "50px",
+            color:({
+                colors
+            })=>colors.titleColor,
         },
+        
     },
     recipesIcon: {
         justifyContent: "space-evenly",

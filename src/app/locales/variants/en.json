@@ -10,7 +10,7 @@
         "yourName":"Your Name",
         "lastName":"Last Name",
         "password":"Password",
-        "confirmPassword":"Confirm Password",
+        "passwordConfirm":"Password Confirm",
         "gender":"Gender",
         "male":"Male",
         "female":"Female",
@@ -21,6 +21,7 @@
         "delete":"Delete",
         "recipeTitle":"Recipe Title",
         "recipe":"recipe",
-        "portion":"Portion"
+        "portion":"Portion",
+        "userName":"User Name"
     }
 }

@@ -10,6 +10,7 @@ const useStyles = createUseStyles({
         justifyContent: "space-between",
         alignItems: "center",
         display: "flex",
+        width:"70%",
         "@media screen and (max-width: 900px)": {
             justifyContent: "space-evenly",
             backgroundColor: "lightgray",
@@ -48,9 +49,8 @@ const useStyles = createUseStyles({
     container: {
         backgroundColor: ({
             colors 
-        }) => colors.backgroundColor,
-        borderBottom: "2px solid green",
-        justifyContent: "space-between",
+        }) => colors.primary,
+        justifyContent: "space-evenly",
         flexDirection: "row",
         alignItems: "center",
         userSelect: "none",
@@ -67,30 +67,27 @@ const useStyles = createUseStyles({
         textDecoration: "none",
         alignItems: "center",
         display: "flex",
-        width: "100%",
+        width: "80%",
         "@media screen and (max-width: 900px)": {
             flexDirection: "column",
-            gap: "20px",
+            gap:"30px",
             "& >div": {
                 justifyContent: "center",
                 alignItems: "center",
-                width: "100%",
+                width: "150px",
             },
         },
     },
     titleContent: {
-        color: ({
-            colors 
-        }) => colors.titleColor,
-        borderBottom: "2px solid green",
+        color:({
+            colors
+        })=>colors.mainTitleColor,
         textDecoration: "none",
         padding: "2px 10px",
-        fontSize: "1.5rem",
+        fontSize: "1.75rem",
         fontWeight: "bold",
         margin: "0 50px",
         "&:hover": {
-            borderRight: "2px solid green",
-            borderLeft: "2px solid green",
             borderRadius: "5px",
             cursor: "pointer",
         },
@@ -104,9 +101,9 @@ const useStyles = createUseStyles({
     memberContainer: {
         justifyContent: "flex-end",
         alignItems: "center",
-        marginRight: "50px",
         display: "flex",
         width: "55%",
+        minWidth:"125px",
         "@media screen and (max-width: 1100px)": {
             flexDirection: "column",
         },
@@ -117,7 +114,9 @@ const useStyles = createUseStyles({
         "& span": {
             fontSize: "1.5 rem",
             fontWeight: "bold",
-            color: "#007a33",
+            color:({
+                colors
+            })=>colors.mainTitleColor,
             margin: "10px",
             "@media screen and (max-width: 1100px)": {
                 display: "none",
@@ -125,13 +124,12 @@ const useStyles = createUseStyles({
         },
     },
     memberContent: {
-        borderBottom: "1px solid green",
         textDecoration: "none",
         fontSize: "1.125rem",
         padding: "2px 10px",
         color: ({
             colors 
-        }) => colors.titleColor,
+        }) => colors.mainTitleColor,
         margin: "10px",
     },
     hamburger: {
@@ -144,7 +142,6 @@ const useStyles = createUseStyles({
         },
     },
     logo: {
-        marginLeft: "100px",
         borderRadius: "50%",
         height: "75px",
         width: "75px",
@@ -156,7 +153,6 @@ const useStyles = createUseStyles({
         display: "flex",
         "@media screen and (max-width: 1100px)": {
             flexDirection: "column",
-            marginRight: "50px",
             margin: "0",
         },
         "@media screen and (max-width: 900px)": {
@@ -169,6 +165,31 @@ const useStyles = createUseStyles({
             width: "50%",
         },
     },
+    line: {
+        justifyContent:"center",
+        position:"absolute",
+        alignItems:"center",
+        display:"flex",
+        width: "100%",
+        top:"100px",
+        "& div":{
+            backgroundColor:"#318A5E",
+            height:"2px",
+            width:"90%",
+        }
+    },
+    profile:{
+        display:"flex",
+        alignItems:"center",
+        justifyContent:"flex-end",
+        width:"15%",
+        "& svg":{
+            width:"60px",
+            height:"auto",
+            color:"#318A5E"
+        }
+    }
+    
 });
 
 export default useStyles;

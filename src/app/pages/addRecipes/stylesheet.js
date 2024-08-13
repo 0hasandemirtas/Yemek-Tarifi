@@ -36,7 +36,9 @@ const useStyles=createUseStyles({
         }
     },
     container:{
-        background:'url("./images/yemek-arkaplan-3.jpg")',
+        backgroundColor:({
+            colors
+        })=>colors.backgroundColor,
         justifyContent:"center",
         flexDirection:"column",
         alignItems:"center",

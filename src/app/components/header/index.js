@@ -1,4 +1,6 @@
-import React from "react";
+import React, {
+    useEffect 
+} from "react";
 import useStyles from "./stylesheet";
 import {
     Link 
@@ -19,7 +21,12 @@ import {
 import {
     useLanguage 
 } from "../../context/languageContext";
-
+import {
+    updatedUser 
+} from "../../context/userContext";
+import {
+    CgProfile 
+} from "react-icons/cg";
 const Header = () => {
     const {
         activeTheme, changeTheme 
@@ -28,11 +35,18 @@ const Header = () => {
         activeLanguage, changeLanguage 
     } = useLanguage();
     const [isOpen, setOpen] = useState(false);
+    const {
+        isLogin,
+        setIsLogin
+    }=updatedUser();
     const classes = useStyles({
-        colors: activeTheme.color, isOpen 
+        colors: activeTheme.color, isOpen ,isLogin
     });
     const lang = activeLanguage.translations;
+    useEffect(()=>{
 
+        console.log(isLogin);
+    });
     return (
         <div className={classes.container}>
             <div className={classes.logoContainer}>
@@ -55,31 +69,56 @@ const Header = () => {
                         </Link>
                     </div>
                     <div>
-                        <Link className={classes.titleContent} to="myRecipes">
+                        <Link 
+                            className={classes.titleContent} 
+                            to="myRecipes"
+                            style={{
+                                display: isLogin ? "flex" : "none"
+                            }}
+                        >
                             {lang.myRecipes}
                         </Link>
                     </div>
                 </div>
-                <div className={classes.memberContainer}>
+                <div 
+                    className={classes.memberContainer}
+                    style={{
+                        display: isLogin ? "none" : "flex"
+                    }}
+                >
                     <Link className={classes.memberContent} to="login">
                         {lang.signIn}
                     </Link>
                     <span>/</span>
-                    <Link className={classes.memberContent} to="register">
+                    <Link className={classes.memberContent} to="signUp">
                         {lang.signUp}
                     </Link>
                 </div>
                 <div className={classes.iconGroup}>
                     <div className={classes.icon}>
-                        <GrLanguage onClick={() => changeLanguage()} />
+                        <GrLanguage onClick={() => changeLanguage()} color="#318A5E" />
                     </div>
                     <div className={classes.icon}>
-                        <VscColorMode onClick={() => changeTheme()} />
+                        <VscColorMode onClick={() => changeTheme()}  color="#318A5E"/>
                     </div>
+                </div>
+                <div className={classes.profile} >
+                    <CgProfile
+                        style={{
+                            display: isLogin ? "flex" : "none",
+                        }}
+                    />
                 </div>
             </div>
             <div className={classes.hamburger}>
-                <Hamburger toggled={isOpen} toggle={setOpen} />
+                <Hamburger style={{
+                    size:"20px"
+                }}toggled={isOpen} toggle={setOpen} />
+            </div>
+            <div className={classes.line} >
+                <div>
+                    
+                </div>
             </div>
         </div>
     );

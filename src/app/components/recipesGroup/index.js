@@ -20,29 +20,31 @@ import {
 import axios from "axios";
 
 const RecipesGroup = ({
-    photoURL, title, minute, people, id 
+    photoURL, title, minute, people, id, controller
 }) => {
+    const navigate = useNavigate();
     const {
         activeLanguage 
     } = useLanguage();
     const {
         activeTheme 
     } = useTheme();
-    const lang = activeLanguage.translations;
     const classes = useStyles({
         colors: activeTheme.color 
     });
-
-    const navigate = useNavigate();
+    const lang = activeLanguage.translations;
+    
     const recipeDelete = () => {
         axios
-            .delete(`http://localhost:3001/api/questions/${id}`)
+            .delete(`http://localhost:3001/api/recipes/${id}`)
             .catch((err) => {
                 alert(err.message);
                 console.error(err);
             })
             .finally();
+        navigate("/myRecipes");
     };
+    console.log(controller);
     return (
         <div className={classes.recipesContentContainer}>
             <img src={photoURL} onClick={() => navigate("/recipeContent/" + id)} />
@@ -61,15 +63,21 @@ const RecipesGroup = ({
                     </span>
                 </div>
             </div>
-            <div className={classes.controlContainer}>
+            <div className={classes.controlContainer}
+                
+            >
                 <button
                     onClick={() => navigate("/recipeContent/" + id)}
                     className={classes.button}
                 >
           Detay
                 </button>
-                <MdDelete onClick={recipeDelete} />
-                <FaEdit onClick={() => navigate("/updateRecipes/" + id)} />
+                <MdDelete onClick={recipeDelete} style={{
+                    display: controller
+                }} />
+                <FaEdit onClick={() => navigate("/updateRecipes/" + id)} style={{
+                    display: controller
+                }} />
             </div>
         </div>
     );

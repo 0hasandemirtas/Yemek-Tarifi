@@ -12,7 +12,6 @@ import RecipesSections from "./views/recipesSection";
 import {
     Link 
 } from "react-router-dom";
-import RecipeContent from "./views/recipesContent";
 import {
     useState 
 } from "react";

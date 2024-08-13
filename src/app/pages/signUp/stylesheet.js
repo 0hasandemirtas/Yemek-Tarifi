@@ -1,13 +1,16 @@
 import { 
     createUseStyles 
 } from "react-jss";
-
+import {
+    clickEvent 
+} from "../../themes/helpers";
 const useStyles=createUseStyles({
     formContainer:{
         backgroundColor:({
             colors
         }) => colors.backgroundColor,
         justifyContent:"space-evenly",
+        boxShadow: "0 2px 5px black",
         border:"2px solid #2E8B57",
         flexDirection:"column",
         alignItems:"center",
@@ -22,9 +25,8 @@ const useStyles=createUseStyles({
         }
     },
     formGroupInput:{
-        border:"3px inset #2E8B57",
         backgroundColor:"#d6ffe1",
-        borderRadius:"2px",
+        borderRadius:"35px",
         color:"#606971",
         display:"block",
         fontSize:"16px",
@@ -36,7 +38,9 @@ const useStyles=createUseStyles({
         }
     },
     container:{
-        background:'url("./images/yemek-arkaplan-3.jpg")',
+        backgroundColor:({
+            colors
+        })=>colors.primary,
         justifyContent:"center",
         flexDirection:"column",
         alignItems:"center",
@@ -50,7 +54,6 @@ const useStyles=createUseStyles({
         margin:" 30px",
         height: "30px",
         width:"400px",
-        padding: "0",
         "@media screen and (max-width: 600px)": {
             width:"90%",
         }
@@ -100,6 +103,7 @@ const useStyles=createUseStyles({
         })=>colors.textColor,
         fontSize:"18px",
         display:"flex",
+        marginLeft:"5px"
     },
     formInput:{
         color:({
@@ -107,11 +111,10 @@ const useStyles=createUseStyles({
         })=>colors.textColor,
         margin:"0 15px",
     },
-    formGroupRadioLabel:{
-        color:({
-            colors
-        })=>colors.textColor
-    },
+    ınputError:{
+        color:"rgb(188,73,73)",
+        fontSize:"15px"
+    }
 });
 
 export default useStyles;

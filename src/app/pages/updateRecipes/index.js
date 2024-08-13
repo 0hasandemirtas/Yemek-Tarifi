@@ -9,7 +9,7 @@ import {
     useLanguage 
 } from "../../context/languageContext";
 import {
-    Link, useParams 
+    Link, useNavigate, useParams 
 } from "react-router-dom";
 import axios from "axios";
 
@@ -34,9 +34,10 @@ const UpdateRecipes = () => {
         people: "",
         minute: "",
     });
+    const navigate=useNavigate();
     useEffect(() => {
         axios
-            .get(`http://localhost:3001/api/questions/${id}`)
+            .get(`http://localhost:3001/api/recipes/${id}`)
             .then((res) => {
                 const recipes = res.data;
                 if (recipes.code === 200) {
@@ -73,12 +74,13 @@ const UpdateRecipes = () => {
             post.people = recipes.people;
         }
         axios
-            .put(`http://localhost:3001/api/questions/${id}`, post)
+            .put(`http://localhost:3001/api/recipes/${id}`, post)
             .then((response) => console.log(response))
             .catch((err) => {
                 alert(err.message);
                 console.error(err);
             });
+        navigate("/myRecipes");
     };
 
     return (

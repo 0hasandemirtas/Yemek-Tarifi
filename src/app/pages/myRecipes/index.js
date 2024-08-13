@@ -10,7 +10,8 @@ import {
 } from "../../context/languageContext";
 import RecipesSections from "./views/recipesSection";
 import {
-    Link, Outlet 
+    Link, Outlet, 
+    useNavigate
 } from "react-router-dom";
 
 const MyRecipes = () => {
@@ -21,20 +22,20 @@ const MyRecipes = () => {
         activeTheme 
     } = useTheme();
     const lang = activeLanguage.translations;
-
+    const navigate =useNavigate();
     const classes = useStyles({
         colors: activeTheme.color 
     });
     return (
         <div className={classes.container}>
-            <div className={classes.operationsContainer}>
-                <Link to="/addRecipe">
-                    <button>{lang.add}</button>
-                </Link>
-            </div>
+            
             <div className={classes.recipesGroup}>
                 <RecipesSections />
             </div>
+            <button 
+                className={classes.addButton}
+                onClick={() => navigate("/addRecipe")}
+            >{lang.add}</button>
         </div>
     );
 };

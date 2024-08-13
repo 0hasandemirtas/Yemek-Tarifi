@@ -6,8 +6,9 @@ import {
 } from "../../themes/helpers";
 const useStyles = createUseStyles({
     container: {
-        background: 'url("./images/yemek-arkaplan-3.jpg")',
-        backgroundRepeat: "repeat",
+        backgroundColor:({
+            colors
+        })=>colors.primary,
         flexDirection: "column",
         alignItems: "center",
         minHeight: "100vh",
@@ -19,11 +20,10 @@ const useStyles = createUseStyles({
         backgroundColor: ({
             colors 
         }) => colors.backgroundColor,
-        borderRight: "2px solid green",
+        boxShadow: "0 2px 5px black",
         justifyContent: "space-evenly",
-        borderLeft: "2px solid green",
         borderRadius: "20px",
-        margin: "15px 0",
+        margin: "40px 0",
         flexWrap: "wrap",
         display: "flex",
         height: "auto",

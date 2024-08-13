@@ -1,10 +1,12 @@
 const color={
-    primary:"#007a33",
-    backgroundColor:"#e9e9e9",
-    textColor:"#00933B",
-    buttonColor:"#00933B",
-    titleColor:"#00933B",
-    buttonTextColor:"white",
+    primary:"#BDD1C5",
+    secondary:"#318A5E",
+    backgroundColor:"#5A706A",
+    textColor:"#FFFFFF",
+    buttonColor:"#FFEB3B   ",
+    titleColor:"#FFFFFF",
+    buttonTextColor:"#000000",
+    mainTitleColor:"white",
 };
 
 const light={

@@ -6,11 +6,12 @@ import {
 } from "../../themes/helpers";
 const useStyles=createUseStyles({
     formContainer:{
-        justifyContent:"space-evenly",
-        border:"2px solid #2E8B57",
         backgroundColor:({
             colors
         }) => colors.backgroundColor,
+        justifyContent:"space-evenly",
+        boxShadow: "0 2px 5px black",
+        border:"2px solid #2E8B57",
         flexDirection:"column",
         alignItems:"center",
         borderRadius:"20px",
@@ -24,9 +25,8 @@ const useStyles=createUseStyles({
         }
     },
     formGroupInput:{
-        border:"3px inset #2E8B57",
         backgroundColor:"#d6ffe1",
-        borderRadius:"2px",
+        borderRadius:"35px",
         color:"#606971",
         display:"block",
         fontSize:"16px",
@@ -38,14 +38,15 @@ const useStyles=createUseStyles({
         }
     },
     container:{
-        background:'url("./images/yemek-arkaplan-3.jpg")',
-        backgroundRepeat:"repeat",
+        backgroundColor:({
+            colors
+        })=>colors.primary,
         justifyContent:"center",
         flexDirection:"column",
         alignItems:"center",
         display:"flex",
+        height:"100vh",
         width:"100%",
-        height:"100vh"
     },
     formContentContainer:{
         lineHeight: "30px",
@@ -53,7 +54,6 @@ const useStyles=createUseStyles({
         margin:" 30px",
         height: "30px",
         width:"400px",
-        padding: "0",
         "@media screen and (max-width: 600px)": {
             width:"90%",
         }

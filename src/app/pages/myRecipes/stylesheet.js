@@ -6,8 +6,9 @@ import {
 } from "../../themes/helpers";
 const useStyles = createUseStyles({
     container: {
-        background: 'url("./images/yemek-arkaplan-3.jpg")',
-        backgroundRepeat: "repeat",
+        backgroundColor:({
+            colors
+        })=>colors.primary,
         flexDirection: "column",
         alignItems: "center",
         userSelect: "none",
@@ -16,18 +17,19 @@ const useStyles = createUseStyles({
         width: "100%",
     },
     recipesGroup: {
+        
         backgroundColor: ({
             colors 
         }) => colors.backgroundColor,
-        borderRight: "2px solid green",
         justifyContent: "space-evenly",
-        borderLeft: "2px solid green",
+        boxShadow: "0 2px 5px black",
         borderRadius: "20px",
-        margin: "15px 0",
+        margin: "40px 0",
         flexWrap: "wrap",
         height: "auto",
         display: "flex",
         width: "80%",
+        marginTop:"75px",
     },
     recipesContentContainer: {
         color: ({
@@ -71,7 +73,7 @@ const useStyles = createUseStyles({
     operationsContainer: {
         backgroundColor: ({
             colors 
-        }) => colors.backgroundColor,
+        }) => colors.secondary,
         justifyContent: "space-evenly",
         alignItems: "center",
         borderRadius: "15px",
@@ -91,5 +93,18 @@ const useStyles = createUseStyles({
             ...clickEvent(),
         },
     },
+    addButton:{
+        backgroundColor: ({
+            colors
+        })=>
+            colors.buttonColor
+        ,
+        padding:"10px 25px",
+        borderRadius:"25px",
+        position:"absolute",
+        right:"130px",
+        top:"120px",
+        
+    }
 });
 export default useStyles;

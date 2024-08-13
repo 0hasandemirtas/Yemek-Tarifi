@@ -9,11 +9,19 @@ import {
     useLanguage 
 } from "../../context/languageContext";
 import {
-    Link 
+    Link, 
+    useNavigate
 } from "react-router-dom";
 import axios from "axios";
+import {
+    updatedUser 
+} from "../../context/userContext";
 
 const AddRecipe = () => {
+    const {
+        user
+    }=updatedUser();
+    console.log(user);
     const {
         activeLanguage 
     } = useLanguage();
@@ -29,7 +37,7 @@ const AddRecipe = () => {
         people: "",
         minute: "",
     });
-    console.log(post);
+    const navigate=useNavigate();
     const handleInput = (event) => {
         setPost({
             ...post, [event.target.name]: event.target.value 
@@ -41,12 +49,13 @@ const AddRecipe = () => {
     const handleSubmit = (event) => {
         console.log(post);
         axios
-            .post("http://localhost:3001/api/questions", post)
+            .post("http://localhost:3001/api/recipes", post)
             .then((response) => console.log(response))
             .catch((err) => {
                 alert(err.message);
                 console.error(err);
             });
+        navigate("/myRecipes");
     };
     console.log(post);
     return (

@@ -8,14 +8,20 @@ import {
 import {
     LanguageProvider 
 } from './context/languageContext';
+import {
+    UserProvider 
+} from './context/userContext';
+
 const App=()=> {
     return (
         <div className="App">
             <ThemeProvider>
                 <LanguageProvider> 
-                    <Header/>
-                    <RouterConfig/>
-                    <Footer/>
+                    <UserProvider>
+                        <Header/>
+                        <RouterConfig/>
+                        <Footer/>
+                    </UserProvider>
                 </LanguageProvider> 
             </ThemeProvider>
         </div>

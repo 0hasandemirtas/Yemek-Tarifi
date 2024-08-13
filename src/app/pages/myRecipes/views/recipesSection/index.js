@@ -7,7 +7,9 @@ import RecipesGroup from "../../../../components/recipesGroup";
 import {
     MdDelete 
 } from "react-icons/md";
-
+import {
+    Audio 
+} from "react-loader-spinner";
 const RecipesSections = () => {
     const [recipes, setRecipes] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -15,7 +17,7 @@ const RecipesSections = () => {
     const apiURL = "http://localhost:3001";
     useEffect(() => {
         axios
-            .get("http://localhost:3001/api/questions")
+            .get("http://localhost:3001/api/recipes")
             .then((res) => {
                 const recipes = res.data;
                 if (recipes.code === 200) {
@@ -35,7 +37,9 @@ const RecipesSections = () => {
     return (
         <>
             {isLoading ? (
-                <span>loading</span>
+                <Audio 
+                   
+                />
             ) : (
                 recipes.map((item, index) => {
                     return (
@@ -46,6 +50,7 @@ const RecipesSections = () => {
                                 minute={item.minute}
                                 people={item.people}
                                 id={item.id}
+                                controller="flex"
                             />
                         </>
                     );

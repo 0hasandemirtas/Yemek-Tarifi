@@ -30,7 +30,7 @@ const RecipeContent = () => {
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
         axios
-            .get(`http://localhost:3001/api/questions/${id}`)
+            .get(`http://localhost:3001/api/recipes/${id}`)
             .then((res) => {
                 const recipes = res.data;
                 if (recipes.code === 200) {
