@@ -6,6 +6,7 @@ const color={
     titleColor:"#2C3E50 ",
     buttonTextColor:"#000000",
     mainTitleColor:"#E1F5DC",
+    asd:"asd",
 };
 
 const dark={
