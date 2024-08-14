@@ -4,12 +4,19 @@ import React, {
 import useStyles from "./stylesheet";
 import axios from "axios";
 import RecipesGroup from "../../../../components/recipesGroup";
+import {
+    userAuth 
+} from "../../../../context/userContext";
+import {
+    Audio 
+} from "react-loader-spinner";
 
 const RecipesSections = () => {
     const [recipes, setRecipes] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const classes = useStyles();
     const apiURL = "http://localhost:3001";
+    
     useEffect(() => {
         axios
             .get("http://localhost:3001/api/recipes")
@@ -28,10 +35,11 @@ const RecipesSections = () => {
             })
             .finally(() => setIsLoading(false));
     }, []);
+    console.log("recipesiii",recipes);
     return (
         <>
             {isLoading ? (
-                <span>loading</span>
+                <Audio/>
             ) : (
                 recipes.map((item, index) => {
                     return (

@@ -7,11 +7,12 @@ const UserContext = createContext();
 export const UserProvider=({
     children
 }) =>{
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState();
     const [isLogin , setIsLogin]= useState(false);
     const signIn = (userData)=>{
         setUser(userData);
         setIsLogin(true);
+        console.log("context user",user);
     };
     const logOut = () =>{
         setIsLogin(false);
@@ -19,8 +20,7 @@ export const UserProvider=({
     };
     const values={
         user,
-        signIn,
-        logOut,
+        setUser,
         isLogin,
         setIsLogin
     };
@@ -30,4 +30,4 @@ export const UserProvider=({
         </UserContext.Provider>
     );
 };
-export const updatedUser = ()=>useContext(UserContext);
+export const userAuth =  ()=> useContext(UserContext);

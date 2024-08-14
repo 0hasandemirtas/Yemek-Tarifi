@@ -7,7 +7,7 @@ import {
     useLanguage 
 } from '../../context/languageContext';
 import {
-    updatedUser
+    userAuth
 } from '../../context/userContext';
 import {
     useFormik
@@ -29,31 +29,30 @@ const Login=()=> {
         colors: activeTheme.color
     });
     const {
-        user,signIn,logOut,isLogin,setIsLogin
-    }=updatedUser();
+        user,setUser,setIsLogin
+    }=userAuth();
     const navigate= useNavigate();
     const {
         values,errors ,handleChange,handleSubmit
     }=useFormik({
         initialValues:{
             userName:"",
-            password:"",
+            password:"", 
         },
         onSubmit:async(values,bag)=>{
-            // console.log(values);
             await axios
                 .post("http://localhost:3001/api/users/login",{
                     userName:values.userName,
                     password:values.password,
                 })
                 .then((response)=>{
-                    //console.log(response.data);
+                    setUser(response);
                     setIsLogin(true);
+                    console.log(response);
                     navigate("/home");
                 })
                 .catch((err)=>{
                     alert(err.response.data.message);
-                    console.error(err.response.data.message);
                 });
         }
     });

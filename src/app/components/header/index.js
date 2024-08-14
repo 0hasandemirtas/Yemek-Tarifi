@@ -22,7 +22,7 @@ import {
     useLanguage 
 } from "../../context/languageContext";
 import {
-    updatedUser 
+    userAuth
 } from "../../context/userContext";
 import {
     CgProfile 
@@ -38,7 +38,7 @@ const Header = () => {
     const {
         isLogin,
         setIsLogin
-    }=updatedUser();
+    }=userAuth();
     const classes = useStyles({
         colors: activeTheme.color, isOpen ,isLogin
     });

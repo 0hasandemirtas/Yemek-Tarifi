@@ -14,14 +14,11 @@ import {
 } from "react-router-dom";
 import axios from "axios";
 import {
-    updatedUser 
+    userAuth 
 } from "../../context/userContext";
 
 const AddRecipe = () => {
-    const {
-        user
-    }=updatedUser();
-    console.log(user);
+    
     const {
         activeLanguage 
     } = useLanguage();
@@ -32,10 +29,14 @@ const AddRecipe = () => {
     const classes = useStyles({
         colors: activeTheme.color 
     });
+    const {
+        user
+    }=userAuth();
     const [post, setPost] = useState({
         title: "",
         people: "",
         minute: "",
+        users: user.userName,
     });
     const navigate=useNavigate();
     const handleInput = (event) => {
@@ -46,9 +47,9 @@ const AddRecipe = () => {
             ...post 
         });
     };
-    const handleSubmit = (event) => {
+    const handleSubmit = async(event) => {
         console.log(post);
-        axios
+        await axios
             .post("http://localhost:3001/api/recipes", post)
             .then((response) => console.log(response))
             .catch((err) => {

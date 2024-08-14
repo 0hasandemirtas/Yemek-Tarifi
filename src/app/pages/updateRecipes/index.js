@@ -53,13 +53,9 @@ const UpdateRecipes = () => {
             })
             .finally(() => setIsLoading(false));
     }, []);
-
     const handleInput = (event) => {
         event && setPost({
             ...post, [event.target.name]: event.target.value 
-        });
-        console.log({
-            ...post 
         });
     };
 
