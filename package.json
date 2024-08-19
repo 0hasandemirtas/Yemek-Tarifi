@@ -12,6 +12,11 @@
     "axios": "^1.7.2",
     "formik": "^2.4.6",
     "hamburger-react": "^2.5.1",
+    "js-cookie": "^3.0.5",
+    "jsonwebtoken": "^9.0.2",
+    "jwt": "^0.2.0",
+    "jwt-decode": "^4.0.0",
+    "jwt-js-decode": "^1.9.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-font": "^1.2.1",
@@ -23,8 +28,7 @@
     "web-vitals": "^2.1.4",
     "yup": "^1.4.0"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

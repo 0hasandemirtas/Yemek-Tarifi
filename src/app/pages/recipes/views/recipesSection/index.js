@@ -35,7 +35,6 @@ const RecipesSections = () => {
             })
             .finally(() => setIsLoading(false));
     }, []);
-    console.log("recipesiii",recipes);
     return (
         <>
             {isLoading ? (

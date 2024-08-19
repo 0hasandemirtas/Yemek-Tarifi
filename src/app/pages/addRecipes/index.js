@@ -43,9 +43,6 @@ const AddRecipe = () => {
         setPost({
             ...post, [event.target.name]: event.target.value 
         });
-        console.log({
-            ...post 
-        });
     };
     const handleSubmit = async(event) => {
         console.log(post);
@@ -58,7 +55,6 @@ const AddRecipe = () => {
             });
         navigate("/myRecipes");
     };
-    console.log(post);
     return (
         <div className={classes.container}>
             <div className={classes.formContainer}>

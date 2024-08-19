@@ -1,7 +1,9 @@
 import {
-    createContext, useContext ,useState
+    createContext, useContext ,useEffect,useState
 } from "react";
-
+import {
+    jwtDecode 
+}from 'jwt-decode';
 
 const UserContext = createContext();
 export const UserProvider=({
@@ -9,6 +11,30 @@ export const UserProvider=({
 }) =>{
     const [user, setUser] = useState();
     const [isLogin , setIsLogin]= useState(false);
+    
+    useEffect(()=>{
+        fetchData();
+    },[]);
+    const fetchData =  async() =>{
+        const token =  localStorage.getItem('token');
+        const data = await jwtDecode(token);
+        console.log("tokenss",token);
+        console.log("dataa",data);
+        const payload={
+            userName:data.userName,
+            token:token
+        };
+        console.log("payload",payload);
+        if(data){
+            setIsLogin(true);
+            await setUser(payload);
+        }
+        else{
+            setIsLogin(false);
+            setUser(null);
+        }
+        console.log("zehra2",user);
+    };
     const signIn = (userData)=>{
         setUser(userData);
         setIsLogin(true);
@@ -22,7 +48,8 @@ export const UserProvider=({
         user,
         setUser,
         isLogin,
-        setIsLogin
+        setIsLogin,
+        signIn,
     };
     return(
         <UserContext.Provider value={values}>
@@ -30,4 +57,4 @@ export const UserProvider=({
         </UserContext.Provider>
     );
 };
-export const userAuth =  ()=> useContext(UserContext);
+export const userAuth =  ()=>  useContext(UserContext);

@@ -54,12 +54,12 @@ const RecipeContent = () => {
                     <img src="../images/yemek1.jpg" />
                     <div>
                         <span>
-              lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
-              ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
-              ipsumlorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-              lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
-              ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsum
-              lorem ipsum
+                            lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
+                            ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
+                            ipsumlorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                            lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
+                            ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsum
+                            lorem ipsum
                         </span>
                     </div>
                 </div>

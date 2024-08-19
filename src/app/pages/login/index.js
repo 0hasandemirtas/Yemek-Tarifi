@@ -29,7 +29,7 @@ const Login=()=> {
         colors: activeTheme.color
     });
     const {
-        user,setUser,setIsLogin
+        user,setUser,setIsLogin,signIn
     }=userAuth();
     const navigate= useNavigate();
     const {
@@ -46,9 +46,10 @@ const Login=()=> {
                     password:values.password,
                 })
                 .then((response)=>{
-                    setUser(response);
-                    setIsLogin(true);
-                    console.log(response);
+                    signIn(response.data.data);
+                    localStorage.setItem('token',response.data.data.token);
+                    console.log("user ilk hali",response.data.data);
+                    
                     navigate("/home");
                 })
                 .catch((err)=>{

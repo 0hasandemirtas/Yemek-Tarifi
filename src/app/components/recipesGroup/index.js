@@ -20,7 +20,7 @@ import {
 import axios from "axios";
 
 const RecipesGroup = ({
-    key,photoURL, title, minute, people, id, controller
+    photoURL, title, minute, people, id, controller
 }) => {
     const navigate = useNavigate();
     const {
@@ -45,7 +45,7 @@ const RecipesGroup = ({
         navigate("/myRecipes");
     };
     return (
-        <div className={classes.recipesContentContainer}>
+        <div className={classes.recipesContentContainer}  >
             <img src={photoURL} onClick={() => navigate("/recipeContent/" + id)} />
             <h2>{title}</h2>
             <div className={classes.titleGroup}>

@@ -21,17 +21,19 @@ const RecipesSections = () => {
     const {
         user
     }=userAuth();
-    console.log("usersnamesss",user.data.data);
-    useEffect(()=>{
-        axios
-            .get(`http://localhost:3001/api/recipes/users/${user.data.data.userName}`,{
+    useEffect( ()=>{
+        fetchData();
+    }, [user]);
+    const fetchData = async () => {
+        console.log("zehra",user);
+        await axios
+            .get(`http://localhost:3001/api/recipes/users/${user.userName}`,{
                 headers:{
-                    Authorization: `Bearer ${user.data.data.token}`
+                    Authorization: `Bearer ${user.token}`
                 }
             })
             .then((res) => {
                 const recipes = res.data;
-                console.log("recipess",recipes);
                 if (recipes.code === 200) {
                     setRecipes(res.data.payload);
                     setIsLoading(false);
@@ -44,8 +46,7 @@ const RecipesSections = () => {
                 console.error(err);
             })
             .finally(() => setIsLoading(false));
-    }, []);
-    console.log("recipes",recipes);
+    };
     return (
         <>
             {isLoading ? (
