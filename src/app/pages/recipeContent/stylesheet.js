@@ -15,19 +15,23 @@ const useStyles = createUseStyles({
     },
     topContainer: {
         justifyContent: "space-evenly",
+        justifyContent:"center",
+        alignItems:"center",
         marginTop: "50px",
         display: "flex",
         "& img": {
             borderRadius: "15px",
             width: "300px",
+            margin:"10px",
         },
         "& div": {
+            margin:"10px",
             width: "300px",
             color: ({
                 colors 
             }) => colors.textColor,
         },
-        "@media screen and (max-width: 900px":{
+        "@media screen and (max-width: 900px)":{
             flexDirection:"column",
         }
     },
@@ -44,6 +48,9 @@ const useStyles = createUseStyles({
                 colors
             })=>colors.titleColor,
         },
+        "@media screen and (max-width: 900px)":{
+            height:"900px"
+        }
         
     },
     recipesIcon: {
@@ -59,10 +66,21 @@ const useStyles = createUseStyles({
     },
     recipesIcons: {
         justifyContent: "space-evenly",
+        borderTop:"15px solid white",
+        border: "1px solid white",
         alignItems: "center",
+        borderRadius:"15px",
         display: "flex",
         height: "35%",
+        width:"30%",
     },
+    recipesIconsContainer:{
+        justifyContent:"center",
+        alignItems:"center",
+        display:"flex",
+        width:"100%",
+        height:"35%",
+    }
 });
 
 export default useStyles;

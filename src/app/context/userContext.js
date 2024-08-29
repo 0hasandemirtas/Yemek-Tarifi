@@ -4,6 +4,9 @@ import {
 import {
     jwtDecode 
 }from 'jwt-decode';
+import {
+    useNavigate 
+} from "react-router-dom";
 
 const UserContext = createContext();
 export const UserProvider=({
@@ -11,38 +14,44 @@ export const UserProvider=({
 }) =>{
     const [user, setUser] = useState();
     const [isLogin , setIsLogin]= useState(false);
-    
-    useEffect(()=>{
-        fetchData();
-    },[]);
+    const navigate=useNavigate();
+    const logOut = () =>{
+        setIsLogin(false);
+        setUser(null);
+        localStorage.removeItem('token');
+        navigate("/home");
+    };
+    const isTokenExpired=(token)=>{
+        const tokenPayload=JSON.parse(atob(token.split('.')[1]));
+        const currentTime=Math.floor(Date.now()/1000);
+        return tokenPayload.exp && currentTime > tokenPayload.exp;
+    };
     const fetchData =  async() =>{
         const token =  localStorage.getItem('token');
         const data = await jwtDecode(token);
-        console.log("tokenss",token);
-        console.log("dataa",data);
         const payload={
             userName:data.userName,
             token:token
         };
         console.log("payload",payload);
-        if(data){
+        if(payload.token === undefined){
+            console.log("çıkış");
+            logOut();
+        }
+        else if(data){
             setIsLogin(true);
             await setUser(payload);
         }
         else{
-            setIsLogin(false);
-            setUser(null);
+            logOut();
         }
-        console.log("zehra2",user);
     };
+    useEffect(()=>{
+        fetchData();
+    },[]);
     const signIn = (userData)=>{
         setUser(userData);
         setIsLogin(true);
-        console.log("context user",user);
-    };
-    const logOut = () =>{
-        setIsLogin(false);
-        setUser(null);
     };
     const values={
         user,
@@ -50,6 +59,7 @@ export const UserProvider=({
         isLogin,
         setIsLogin,
         signIn,
+        logOut,
     };
     return(
         <UserContext.Provider value={values}>

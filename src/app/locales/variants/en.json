@@ -22,6 +22,8 @@
         "recipeTitle":"Recipe Title",
         "recipe":"recipe",
         "portion":"Portion",
-        "userName":"User Name"
+        "userName":"User Name",
+        "welcome":"Welcome",
+        "detail":"Detail"
     }
 }

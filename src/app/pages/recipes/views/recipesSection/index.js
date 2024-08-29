@@ -18,6 +18,9 @@ const RecipesSections = () => {
     const apiURL = "http://localhost:3001";
     
     useEffect(() => {
+        fetchData();
+    }, []);
+    const fetchData = () =>{
         axios
             .get("http://localhost:3001/api/recipes")
             .then((res) => {
@@ -34,7 +37,7 @@ const RecipesSections = () => {
                 console.error(err);
             })
             .finally(() => setIsLoading(false));
-    }, []);
+    };
     return (
         <>
             {isLoading ? (

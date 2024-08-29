@@ -26,10 +26,10 @@ const useStyles = createUseStyles({
         borderRadius: "20px",
         margin: "40px 0",
         flexWrap: "wrap",
-        height: "auto",
-        display: "flex",
-        width: "80%",
         marginTop:"75px",
+        display: "flex",
+        height: "auto",
+        width: "80%",
     },
     recipesContentContainer: {
         color: ({
@@ -77,8 +77,8 @@ const useStyles = createUseStyles({
         justifyContent: "space-evenly",
         alignItems: "center",
         borderRadius: "15px",
-        display: "flex",
         margin: "15px 0",
+        display: "flex",
         height: "100px",
         width: "80%",
         "& button": {

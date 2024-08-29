@@ -27,7 +27,6 @@ const Recipes = () => {
     const Controller = () => {
         setOpen(!open);
     };
-
     const classes = useStyles({
         colors: activeTheme.color 
     });

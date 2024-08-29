@@ -27,6 +27,9 @@ import {
 import {
     CgProfile 
 } from "react-icons/cg";
+import {
+    MdLogout 
+} from "react-icons/md";
 const Header = () => {
     const {
         activeTheme, changeTheme 
@@ -37,16 +40,13 @@ const Header = () => {
     const [isOpen, setOpen] = useState(false);
     const {
         isLogin,
-        setIsLogin
+        logOut,
+        user,
     }=userAuth();
     const classes = useStyles({
         colors: activeTheme.color, isOpen ,isLogin
     });
     const lang = activeLanguage.translations;
-    useEffect(()=>{
-
-        console.log(isLogin);
-    });
     return (
         <div className={classes.container}>
             <div className={classes.logoContainer}>
@@ -103,12 +103,17 @@ const Header = () => {
                     </div>
                 </div>
                 <div className={classes.profile} >
-                    <CgProfile
+                    <div>
+                        <label>{user && user.userName}</label>
+                    </div>
+                    <MdLogout
+                        onClick={()=>logOut()}
                         style={{
                             display: isLogin ? "flex" : "none",
                         }}
                     />
                 </div>
+                
             </div>
             <div className={classes.hamburger}>
                 <Hamburger style={{

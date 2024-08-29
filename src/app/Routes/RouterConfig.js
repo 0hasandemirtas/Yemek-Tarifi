@@ -10,12 +10,14 @@ import RecipeContent from "../pages/recipeContent";
 import UpdateRecipes from "../pages/updateRecipes";
 import SignUp from "../pages/signUp";
 import './RouterConfig.css';
+import Home from "../pages/home";
 function RouterConfig() {
     return (
         <div className="RouterConfig">
             <Routes>
                 <Route path="/signUp" element={<SignUp />} />
                 <Route path="/login" element={<Login />} />
+                <Route path="*" element={<Home/>}/>
                 <Route path="/recipes" element={<Recipes />} />
                 <Route path="/myRecipes" element={<MyRecipes />} />
                 <Route path="/addRecipe" element={<AddRecipe />} />

@@ -33,7 +33,6 @@ const RecipesGroup = ({
         colors: activeTheme.color 
     });
     const lang = activeLanguage.translations;
-    
     const recipeDelete = () => {
         axios
             .delete(`http://localhost:3001/api/recipes/${id}`)
@@ -62,14 +61,12 @@ const RecipesGroup = ({
                     </span>
                 </div>
             </div>
-            <div className={classes.controlContainer}
-                
-            >
+            <div className={classes.controlContainer}>
                 <button
                     onClick={() => navigate("/recipeContent/" + id)}
                     className={classes.button}
                 >
-          Detay
+                    {lang.detail}
                 </button>
                 <MdDelete onClick={recipeDelete} style={{
                     display: controller

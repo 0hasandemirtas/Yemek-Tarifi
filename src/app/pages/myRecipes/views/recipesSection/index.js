@@ -24,8 +24,8 @@ const RecipesSections = () => {
     useEffect( ()=>{
         fetchData();
     }, [user]);
+    console.log("user76",user);
     const fetchData = async () => {
-        console.log("zehra",user);
         await axios
             .get(`http://localhost:3001/api/recipes/users/${user.userName}`,{
                 headers:{

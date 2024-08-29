@@ -15,11 +15,11 @@ const useStyles=createUseStyles({
         flexDirection:"column",
         alignItems:"center",
         borderRadius:"20px",
+        userSelect:"none",
+        margin:"20px 0",
         display:"flex",
         height:"600px",
-        margin:"20px 0",
         width:"800px",
-        userSelect:"none",
         "@media screen and (max-width: 1100px)": {
             width:"100%"
         }

@@ -65,9 +65,9 @@ const useStyles = createUseStyles({
         color: "#2E8B57",
         display: "flex",
         "& div > div": {
-            display: "flex",
-            alignItems: "center",
             justifyContent: "center",
+            alignItems: "center",
+            display: "flex",
             "@media screen and (max-width: 600px)": {
                 flexDirection: "row",
             },
@@ -86,8 +86,8 @@ const useStyles = createUseStyles({
         borderRadius: "10px",
         padding: "10px 25px",
         fontWeight: "bold",
-        fontSize: "15px",
         marginTop: "40px",
+        fontSize: "15px",
     },
     title: {
         border: "3px solid black",

@@ -29,6 +29,9 @@ const RecipeContent = () => {
     const [recipes, setRecipes] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
+        fetchData();
+    }, []);
+    const fetchData = () =>{
         axios
             .get(`http://localhost:3001/api/recipes/${id}`)
             .then((res) => {
@@ -45,7 +48,7 @@ const RecipeContent = () => {
                 console.error(err);
             })
             .finally(() => setIsLoading(false));
-    }, []);
+    };
     return (
         <div className={classes.container}>
             <div className={classes.contentContainer}>
@@ -63,18 +66,20 @@ const RecipeContent = () => {
                         </span>
                     </div>
                 </div>
-                <div className={classes.recipesIcons}>
-                    <div className={classes.recipesIcon}>
-                        <img src="../images/zaman.png" alt="zaman" />
-                        <span>
-                            {recipes.minute} {lang.minute}
-                        </span>
-                    </div>
-                    <div className={classes.recipesIcon}>
-                        <img src="../images/kişi.png" alt="zaman" />
-                        <span>
-                            {recipes.people} {lang.people}
-                        </span>
+                <div className={classes.recipesIconsContainer} >
+                    <div className={classes.recipesIcons}>
+                        <div className={classes.recipesIcon}>
+                            <img src="../images/zaman.png" alt="zaman" />
+                            <span>
+                                {recipes.minute} {lang.minute}
+                            </span>
+                        </div>
+                        <div className={classes.recipesIcon}>
+                            <img src="../images/kişi.png" alt="zaman" />
+                            <span>
+                                {recipes.people} {lang.people}
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>

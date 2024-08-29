@@ -67,7 +67,7 @@ const useStyles = createUseStyles({
         textDecoration: "none",
         alignItems: "center",
         display: "flex",
-        width: "80%",
+        width: "90%",
         "@media screen and (max-width: 900px)": {
             flexDirection: "column",
             gap:"30px",
@@ -83,6 +83,7 @@ const useStyles = createUseStyles({
             colors
         })=>colors.mainTitleColor,
         textDecoration: "none",
+        textShadow:"1px 1px gray",
         padding: "2px 10px",
         fontSize: "1.75rem",
         fontWeight: "bold",
@@ -90,6 +91,9 @@ const useStyles = createUseStyles({
         "&:hover": {
             borderRadius: "5px",
             cursor: "pointer",
+        },
+        "@media screen and (max-width: 1300px)": {
+            margin:"0 25px"
         },
         "@media screen and (max-width: 900px)": {
             height: "100%",
@@ -171,7 +175,7 @@ const useStyles = createUseStyles({
         alignItems:"center",
         display:"flex",
         width: "100%",
-        top:"100px",
+        top:"98px",
         "& div":{
             backgroundColor:"#318A5E",
             height:"2px",
@@ -179,17 +183,34 @@ const useStyles = createUseStyles({
         }
     },
     profile:{
-        display:"flex",
+        justifyContent:"space-evenly",
         alignItems:"center",
-        justifyContent:"flex-end",
+        display:"flex",
         width:"15%",
         "& svg":{
-            width:"60px",
+            color:"#318A5E",
             height:"auto",
-            color:"#318A5E"
+            width:"35px",
+        },
+        "& div label":{
+            color: ({
+                colors 
+            }) => colors.mainTitleColor,
+            fontWeight:"bold",
+            fontSize:"1.5rem",
+        },
+        "@media screen and (max-width: 1100px)": {
+            flexDirection:"column",
+            gap:"10px"
         }
-    }
-    
+    },
+    profileContent: {
+        backgroundColor:"black",
+        position:"absolute",
+        height:"100px",
+        width:"100px",
+        top:"100px",
+    },
 });
 
 export default useStyles;

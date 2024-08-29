@@ -10,8 +10,8 @@ const useStyles = createUseStyles({
         color: ({
             colors 
         }) => colors.titleColor,
-        border:"solid 1px black",
-        borderRadius:"5px",
+        border:"solid 2px white",
+        borderRadius:"15px",
         ...clickEvent(),
         margin: "15px",
         height: "40%",
@@ -19,6 +19,7 @@ const useStyles = createUseStyles({
         "& img": {
             borderRadius: "15px",
             width: "90%",
+            marginTop:"10px",
         },
         "@media screen and (max-width: 1100px)": {
             width: "200px",

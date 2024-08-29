@@ -22,6 +22,8 @@
         "recipeTitle":"Tarif Başlığı",
         "recipe":"Tarif",
         "portion":"Porsiyon",
-        "userName":"Kullanıcı adı"
+        "userName":"Kullanıcı adı",
+        "welcome":"Hoşgeldin",
+        "detail":"Detay"
     }
 }
