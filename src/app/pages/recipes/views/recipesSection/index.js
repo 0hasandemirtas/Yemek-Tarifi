@@ -52,6 +52,7 @@ const RecipesSections = () => {
                             minute={item.minute}
                             people={item.people}
                             controller="none"
+                            id={item.id}
                         />
                     );
                 })

@@ -11,6 +11,7 @@ const useStyles = createUseStyles({
             colors 
         }) => colors.titleColor,
         border:"solid 2px white",
+        boxShadow:"1px 2px gray",
         borderRadius:"15px",
         ...clickEvent(),
         margin: "15px",
@@ -21,13 +22,22 @@ const useStyles = createUseStyles({
             width: "90%",
             marginTop:"10px",
         },
+        "& h2":{
+            backgroundColor:"#505050 ",
+            borderRadius:"15px",
+            margin:"15px 15px",
+            padding:"10px 0",
+        },
         "@media screen and (max-width: 1100px)": {
             width: "200px",
         },
     },
     titleGroup: {
-        display: "flex",
         justifyContent: "space-evenly",
+        backgroundColor:"#505050 ",
+        borderRadius:"15px",
+        margin:"0 15px",
+        display: "flex",
         "& > span": {
             fontSize: "15px",
         },
