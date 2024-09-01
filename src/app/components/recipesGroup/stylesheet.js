@@ -23,7 +23,9 @@ const useStyles = createUseStyles({
             marginTop:"10px",
         },
         "& h2":{
-            backgroundColor:"#505050 ",
+            backgroundColor:({
+                colors 
+            }) => colors.cardTitleColor,
             borderRadius:"15px",
             margin:"15px 15px",
             padding:"10px 0",
@@ -34,7 +36,9 @@ const useStyles = createUseStyles({
     },
     titleGroup: {
         justifyContent: "space-evenly",
-        backgroundColor:"#505050 ",
+        backgroundColor:({
+            colors 
+        }) => colors.cardTitleColor,
         borderRadius:"15px",
         margin:"0 15px",
         display: "flex",

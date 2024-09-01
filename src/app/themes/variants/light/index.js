@@ -7,6 +7,7 @@ const color={
     titleColor:"#FFFFFF",
     buttonTextColor:"#000000",
     mainTitleColor:"white",
+    cardTitleColor:"#505050",
 };
 
 const light={

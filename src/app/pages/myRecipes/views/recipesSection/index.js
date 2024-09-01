@@ -24,7 +24,6 @@ const RecipesSections = () => {
     useEffect( ()=>{
         fetchData();
     }, [user]);
-    console.log("user76",user);
     const fetchData = async () => {
         await axios
             .get(`http://localhost:3001/api/recipes/users/${user.userName}`,{
@@ -34,10 +33,15 @@ const RecipesSections = () => {
             })
             .then((res) => {
                 const recipes = res.data;
-                if (recipes.code === 200) {
+                console.log(recipes);
+                if(recipes.code ===400){
+                    alert(recipes.message);
+                }
+                else if (recipes.code === 200) {
                     setRecipes(res.data.payload);
                     setIsLoading(false);
-                } else {
+                }
+                else {
                     throw new Error(res.message);
                 }
             })
@@ -53,21 +57,22 @@ const RecipesSections = () => {
                 <Audio 
                    
                 />
-            ) : (
-                recipes.map((item, index) => {
-                    return (
-                        <RecipesGroup
-                            key={`recipes-${index}`}
-                            photoURL="./images/yemek1.jpg"
-                            title={item.title}
-                            minute={item.minute}
-                            people={item.people}
-                            id={item.id}
-                            controller="flex"
-                        />
-                    );
-                })
-            )}
+            ) : 
+                recipes && (
+                    recipes.map((item, index) => {
+                        return (
+                            <RecipesGroup
+                                key={`recipes-${index}`}
+                                photoURL="./images/yemek1.jpg"
+                                title={item.title}
+                                minute={item.minute}
+                                people={item.people}
+                                id={item.id}
+                                controller="flex"
+                            />
+                        );
+                    })
+                )}
         </>
     );
 };
