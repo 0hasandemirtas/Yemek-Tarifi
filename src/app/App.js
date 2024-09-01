@@ -1,7 +1,8 @@
 import './App.css';
 import RouterConfig from './Routes/RouterConfig';
-import Footer from './components/footer';
-import Header from './components/header';
+import {
+    Header, Footer
+} from "./components";
 import {
     ThemeProvider 
 } from './context/themeContext';

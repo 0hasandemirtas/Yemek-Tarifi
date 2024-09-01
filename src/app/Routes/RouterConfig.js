@@ -2,15 +2,10 @@ import React from "react";
 import {
     Routes, Route 
 } from "react-router-dom";
-import Recipes from "../pages/recipes";
-import Login from "../pages/login";
-import MyRecipes from "../pages/myRecipes";
-import AddRecipe from "../pages/addRecipes";
-import RecipeContent from "../pages/recipeContent";
-import UpdateRecipes from "../pages/updateRecipes";
-import SignUp from "../pages/signUp";
-import './RouterConfig.css';
-import Home from "../pages/home";
+import { 
+    Recipes, Login, MyRecipes, AddRecipe, RecipeContent, UpdateRecipes, SignUp,
+    Home
+} from "../pages";
 function RouterConfig() {
     return (
         <div className="RouterConfig">
